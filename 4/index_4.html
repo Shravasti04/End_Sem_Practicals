@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Traffic Signal Animation</title>
+
+  <style>
+    body {
+      text-align: center;
+    }
+
+    .signal {
+      width: 80px;
+      background: black;
+      padding: 10px;
+      border-radius: 10px;
+      margin: auto;
+    }
+
+    .light {
+      width: 40px;
+      height: 40px;
+      background: gray;
+      border-radius: 50%;
+      margin: 8px auto;
+    }
+
+    .red {
+      animation: redLight 6s infinite;
+    }
+
+    .yellow {
+      animation: yellowLight 6s infinite;
+    }
+
+    .green {
+      animation: greenLight 6s infinite;
+    }
+
+    @keyframes redLight {
+
+      0%,
+      30% {
+        background: red;
+      }
+
+      31%,
+      100% {
+        background: gray;
+      }
+    }
+
+    @keyframes yellowLight {
+
+      0%,
+      30%,
+      61%,
+      100% {
+        background: gray;
+      }
+
+      31%,
+      60% {
+        background: yellow;
+      }
+    }
+
+    @keyframes greenLight {
+
+      0%,
+      60%,
+      91%,
+      100% {
+        background: gray;
+      }
+
+      61%,
+      90% {
+        background: lime;
+      }
+    }
+
+    .road {
+      background: gray;
+      height: 100px;
+      margin-top: 30px;
+      overflow: hidden;
+    }
+
+    .car {
+      width: 80px;
+      height: 40px;
+      background: blue;
+      position: relative;
+      top: 20px;
+      animation: moveCar 6s linear infinite;
+    }
+
+    .wheel {
+      width: 18px;
+      height: 18px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -8px;
+    }
+
+    .w1 {
+      left: 10px;
+    }
+
+    .w2 {
+      right: 10px;
+    }
+
+    @keyframes moveCar {
+
+      0%,
+      60% {
+        transform: translateX(0);
+      }
+
+      90% {
+        transform: translateX(500px);
+      }
+
+      100% {
+        transform: translateX(500px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Traffic Signal Animation</h2>
+
+  <div class="signal">
+    <div class="light red"></div>
+    <div class="light yellow"></div>
+    <div class="light green"></div>
+  </div>
+
+  <h3>Road</h3>
+
+  <div class="road">
+    <div class="car">
+      <div class="wheel w1"></div>
+      <div class="wheel w2"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>
